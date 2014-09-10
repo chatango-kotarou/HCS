@@ -6,7 +6,20 @@ import mid
 import uid
 import hashlib
 import sqlite3 as m
-db = m.connect('CHAT.sqlite3')
+
+global db
+
+dbType = "sqlite"
+if dbType == "sqlite": 
+	db = m.connect('CHAT.sqlite3')
+elif dbType == "mysql":
+	import MySQLdb as sql
+	host = ""
+	user = ""
+	password = ""
+	dbname = ""
+	db = sql.connect(host, user, password, dbname)
+	
 cur = db.cursor()
 
 def ip(id, ip, mode='id'):
