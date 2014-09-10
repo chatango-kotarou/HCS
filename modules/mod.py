@@ -12,7 +12,7 @@ def delMsg(mgr, args):
 	room = args[0]
 	msgid = args[1]
         self.delMsg(room, msgid)
-        mgr.callProtocal('msgremove:%s:%s:%s' % (room, msgid, time))
+        mgr.callProtocal('msgremove:%s:%s:%s' % (room, msgid, time()))
 def delUserMsg(mgr, args):
 	room = args[0]
 	user = args[1]
@@ -39,4 +39,4 @@ def unbanUser(mgr, args):
 	user = args[1]
 	target = args[2]
         self.unbanUser(room, user, target)
-        mgr.callProtocal('unbanned:%s:%s:%s:%s' % (room, user, target, time))
+        mgr.callProtocal('unbanned:%s:%s:%s:%s' % (room, user, target, time()))
