@@ -34,7 +34,7 @@ def login(mgr, args):
 			anonid = mgr.setSsid(ip=_ip, room=room)	
 			user = 'anon%s' % anonid
 			self.setConnected(user, mgr.ip, room)
-			mgr.callProtocal('LGN_DENIED:%s:%s' % (user, _ip))
+			mgr.callProtocal('LGN_DENIED:%s:%s' % (usern, _ip))
 	if status == 'blogAnon' and not self.getRoom(room) == False:
 		anonid = random.randrange(1000, 9000)
                 self.setSsid(_ip, anonid)
