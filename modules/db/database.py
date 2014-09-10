@@ -5,8 +5,8 @@ import time
 import mid
 import uid
 import hashlib
-import MySQLdb as m
-db = m.connect('mysql.yuribot.ml', 'dbadmin', '9911324', 'chatdb')
+import sqlite3 as m
+db = m.connect('CHAT.sqlite3')
 cur = db.cursor()
 
 def ip(id, ip, mode='id'):
